@@ -52,9 +52,8 @@ body>*{position:relative;z-index:1;}
 
 /* NAV */
 nav{background:rgba(250,250,247,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 48px;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
-.logo{font-family:'DM Mono',monospace;font-size:13px;font-weight:500;color:var(--text);letter-spacing:0.1em;text-decoration:none;display:flex;align-items:center;gap:10px;}
-.logo-mark{width:26px;height:26px;background:var(--text);border-radius:var(--r);display:flex;align-items:center;justify-content:center;}
-.logo-mark svg{width:13px;height:13px;}
+.logo{text-decoration:none;display:flex;align-items:center;}
+.nav-logo-img{height:34px;width:auto;display:block;}
 .nav-links{display:flex;gap:28px;}
 .nav-links a{font-size:13px;color:var(--text-muted);text-decoration:none;transition:color .15s;}
 .nav-links a:hover{color:var(--text);}
@@ -414,6 +413,73 @@ footer .logo-f{color:var(--teal);font-weight:500;}
 .toast.success{background:var(--teal);color:#fff;}
 .toast.error{background:var(--red);color:#fff;}
 .toast.info{background:var(--text);color:#fff;}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  /* Nav */
+  nav{padding:0 16px;height:52px;}
+  .nav-links{display:none;}
+  #nav-user{display:none;}
+  #btn-signin{display:none!important;}
+
+  /* Hero */
+  .hero{padding:32px 20px 40px;}
+  .hero-grid{grid-template-columns:1fr;gap:32px;}
+  .live-panel{display:none;}
+  .hero-left h1{font-size:52px;}
+  .hero-left p{max-width:100%;font-size:15px;}
+
+  /* Audit card */
+  .two-fields{grid-template-columns:1fr;}
+  .adv-fields{grid-template-columns:1fr;}
+
+  /* How It Works */
+  .how-section{padding:48px 20px;}
+  .how-stats{padding:20px;gap:0;flex-wrap:wrap;}
+  .hw-num{font-size:36px;}
+  .hw-stat-div{display:none;}
+  .hw-stat{flex:0 0 50%;padding:12px 0;}
+  .steps-grid{grid-template-columns:1fr;gap:16px;}
+  .step-arrow{display:none;}
+
+  /* Pricing */
+  .pricing-section{padding:48px 20px;}
+  .pricing-grid{grid-template-columns:1fr;}
+
+  /* Progress */
+  #progress-area{padding:24px 20px;}
+  .prog-llm{width:100px;font-size:12px;}
+
+  /* Score */
+  .score-section{padding:32px 20px;}
+  .score-layout{grid-template-columns:1fr;gap:24px;}
+  .watermark{font-size:100px;}
+  .gauge-num{font-size:72px;}
+
+  /* LLM Grid */
+  .grid-section{padding:32px 20px;}
+
+  /* Gaps */
+  .gap-section{padding:32px 20px;}
+  .gaps-grid{grid-template-columns:1fr;}
+
+  /* Vendor */
+  .vendor-section{padding:32px 20px;}
+
+  /* CTA */
+  .cta-section{padding:48px 20px;}
+  .cta-h{font-size:34px;}
+  .cta-btns{flex-direction:column;}
+  .btn-cta-solid,.btn-cta-outline{width:100%;text-align:center;}
+
+  /* Pulse */
+  .pulse-section{padding:32px 20px;}
+  .pulse-row{flex-direction:column;}
+  .pulse-in,.btn-pulse{width:100%;box-sizing:border-box;}
+
+  /* Footer */
+  footer{flex-direction:column;gap:8px;padding:20px;text-align:center;}
+}
 </style>
 </head>
 <body>
@@ -443,8 +509,7 @@ footer .logo-f{color:var(--teal);font-weight:500;}
 <!-- NAV -->
 <nav>
   <a href="/" class="logo">
-    <div class="logo-mark"><svg viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="#F0EFEA" stroke-width="1.5"/><circle cx="6.5" cy="6.5" r="2" fill="#12A876"/></svg></div>
-    GEOTRACKER
+    <img src="logo.png" alt="GeoTracker" class="nav-logo-img">
   </a>
   <div class="nav-links">
     <a href="#how-it-works" onclick="scrollTo('how-it-works')">How it works</a>
